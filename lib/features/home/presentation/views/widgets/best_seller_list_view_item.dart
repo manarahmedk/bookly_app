@@ -1,12 +1,11 @@
 import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/utils/assrts.dart';
 import 'package:bookly_app/core/utils/styles.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:flutter/material.dart';
+import 'book_rating.dart';
 
-
-class BestSelllerListViewItem extends StatelessWidget {
-  const BestSelllerListViewItem({super.key});
+class BestSellerListViewItem extends StatelessWidget {
+  const BestSellerListViewItem({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +50,7 @@ class BestSelllerListViewItem extends StatelessWidget {
                 Text(
                   'J.K. Rowling',
                   style: Styles.textStyle14.copyWith(
-                    color: const Color(0xff707070),
+                    color: Colors.grey,
                   ),
                 ),
                 const SizedBox(
