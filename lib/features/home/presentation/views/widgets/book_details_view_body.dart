@@ -1,6 +1,7 @@
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
+import 'book_rating.dart';
 import 'custom_book_details_app_bar.dart';
 import 'custom_book_image.dart';
 
@@ -32,13 +33,15 @@ class BookDetailsViewBody extends StatelessWidget {
           const SizedBox(
             height: 6,
           ),
-          Opacity(
+          const Opacity(
             opacity: 0.7,
             child: Text(
               "Rudyard Kipling",
               style: Styles.textStyle18,
             ),
           ),
+          const SizedBox(height: 18,),
+          BookRating(mainAxisAlignment: MainAxisAlignment.center,),
         ],
       ),
     );

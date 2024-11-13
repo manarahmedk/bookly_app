@@ -53,10 +53,11 @@ class BestSellerListViewItem extends StatelessWidget {
                   const SizedBox(
                     height: 3,
                   ),
-                  Text(
-                    'J.K. Rowling',
-                    style: Styles.textStyle14.copyWith(
-                      color: Colors.grey,
+                  const Opacity(
+                    opacity: 0.7,
+                    child: Text(
+                      'J.K. Rowling',
+                      style: Styles.textStyle14,
                     ),
                   ),
                   const SizedBox(
@@ -71,7 +72,7 @@ class BestSellerListViewItem extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      const BookRating(),
+                       BookRating(),
                     ],
                   ),
                 ],
