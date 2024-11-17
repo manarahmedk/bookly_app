@@ -1,5 +1,4 @@
-class BookEntity{
-
+class BookEntity {
   final String image;
   final String title;
   final String authorName;
@@ -7,5 +6,4 @@ class BookEntity{
   final num rating;
 
   BookEntity(this.image, this.title, this.authorName, this.price, this.rating);
-
 }

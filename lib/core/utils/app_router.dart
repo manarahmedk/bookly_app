@@ -5,7 +5,6 @@ import 'package:bookly_app/features/splash/presentation/views/splash_view.dart';
 import 'package:go_router/go_router.dart';
 
 abstract class AppRouter {
-
   static const homeView = '/homeView';
   static const bookDetailsView = '/bookDetailsView';
   static const searchView = '/searchView';

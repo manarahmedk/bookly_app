@@ -4,7 +4,6 @@ import 'package:bookly_app/features/splash/presentation/views/widgets/sliding_te
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
 
@@ -12,7 +11,8 @@ class SplashViewBody extends StatefulWidget {
   State<SplashViewBody> createState() => _SplashViewBodyState();
 }
 
-class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProviderStateMixin {
+class _SplashViewBodyState extends State<SplashViewBody>
+    with SingleTickerProviderStateMixin {
   late AnimationController animationController;
   late Animation<Offset> slidingAnimation;
 
@@ -21,8 +21,8 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
     super.initState();
     initSlidingAnimation();
     navigateToHome();
-
   }
+
   @override
   void dispose() {
     super.dispose();
@@ -44,7 +44,7 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
     );
   }
 
-  void initSlidingAnimation(){
+  void initSlidingAnimation() {
     animationController = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 1),
@@ -57,11 +57,9 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
     animationController.forward();
   }
 
-  void navigateToHome(){
-    Future.delayed(const Duration(seconds: 2),(){
+  void navigateToHome() {
+    Future.delayed(const Duration(seconds: 2), () {
       GoRouter.of(context).push(AppRouter.homeView);
     });
   }
 }
-
-

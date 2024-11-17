@@ -34,7 +34,7 @@ class HomeViewBody extends StatelessWidget {
                 height: 20,
               ),
             ],
-          ) ,
+          ),
         ),
         SliverToBoxAdapter(
           child: Padding(

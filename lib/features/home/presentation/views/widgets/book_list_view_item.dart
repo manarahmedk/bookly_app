@@ -12,7 +12,7 @@ class BookListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
+      onTap: () {
         GoRouter.of(context).push(AppRouter.bookDetailsView);
       },
       child: SizedBox(
@@ -41,7 +41,7 @@ class BookListViewItem extends StatelessWidget {
                 children: [
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.5,
-                    child:  Text(
+                    child: Text(
                       'Harry Potter and the Goblet of Fire',
                       style: Styles.textStyle20.copyWith(
                         fontFamily: KGSectraFine,
@@ -72,7 +72,7 @@ class BookListViewItem extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                       BookRating(),
+                      BookRating(),
                     ],
                   ),
                 ],
