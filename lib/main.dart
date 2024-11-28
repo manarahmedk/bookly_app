@@ -8,6 +8,8 @@ import 'constants.dart';
 void main() async {
   runApp(const BooklyApp());
 
+  await Hive.initFlutter();
+
   Hive.registerAdapter(BookEntityAdapter());
   
   await Hive.openBox(featuredBox);
