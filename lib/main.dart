@@ -6,13 +6,16 @@ import 'package:hive_flutter/adapters.dart';
 import 'constants.dart';
 
 void main() async {
-  runApp(const BooklyApp());
 
   await Hive.initFlutter();
 
   Hive.registerAdapter(BookEntityAdapter());
-  
-  await Hive.openBox(featuredBox);
+
+  await Hive.openBox<BookEntity>(featuredBox);
+
+  await Hive.openBox<BookEntity>(newestBox);
+
+  runApp(const BooklyApp());
 }
 
 class BooklyApp extends StatelessWidget {
