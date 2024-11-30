@@ -3,8 +3,8 @@ import 'package:hive_flutter/adapters.dart';
 
 void saveBooksData(List<BookEntity> books ,String boxName) {
 
-  var box = Hive.box(boxName);
+  var box = Hive.box<BookEntity>(boxName);
 
-  box.add(books);
+  box.addAll(books);
 
 }
