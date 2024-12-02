@@ -72,7 +72,7 @@ class BookListViewItem extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      BookRating(),
+                      const BookRating(),
                     ],
                   ),
                 ],
