@@ -20,9 +20,9 @@ class _FeaturedBooksListViewState extends State<FeaturedBooksListView> {
 
   @override
   void initState() {
-    super.initState();
     _scrollController = ScrollController();
     _scrollController.addListener(_scrollListener);
+    super.initState();
   }
 
   void _scrollListener() async {
