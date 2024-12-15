@@ -17,6 +17,8 @@ class BookEntity {
   final num? price;
   @HiveField(5)
   final num? rating;
+  @HiveField(6)
+  final num? ratingsCount;
 
   BookEntity({
     required this.image,
@@ -25,5 +27,6 @@ class BookEntity {
     required this.price,
     required this.rating,
     required this.bookId,
+    required this.ratingsCount
   });
 }

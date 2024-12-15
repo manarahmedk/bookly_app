@@ -50,6 +50,7 @@ class _NewestBooksListViewState extends State<NewestBooksListView> {
     return ListView.builder(
       padding: EdgeInsets.zero,
       shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
       controller: _scrollController,
       scrollDirection: Axis.vertical,
       itemCount: widget.books.length,
@@ -60,6 +61,9 @@ class _NewestBooksListViewState extends State<NewestBooksListView> {
             image: widget.books[index].image ?? "",
             author: widget.books[index].authorName ?? "",
             title: widget.books[index].title,
+            rating: widget.books[index].rating ?? 0,
+            ratingsCount: widget.books[index].ratingsCount ?? 0,
+
           ),
         );
       },

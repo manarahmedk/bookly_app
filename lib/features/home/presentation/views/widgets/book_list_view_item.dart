@@ -12,11 +12,15 @@ class BookListViewItem extends StatelessWidget {
     required this.image,
     required this.author,
     required this.title,
+    required this.rating,
+    required this.ratingsCount,
   });
 
   final String image;
   final String author;
   final String title;
+  final num rating;
+  final num ratingsCount;
 
   @override
   Widget build(BuildContext context) {
@@ -58,10 +62,10 @@ class BookListViewItem extends StatelessWidget {
                   const SizedBox(
                     height: 3,
                   ),
-                  const Opacity(
+                  Opacity(
                     opacity: 0.7,
                     child: Text(
-                      'J.K. Rowling',
+                      author,
                       style: Styles.textStyle14,
                     ),
                   ),
@@ -72,12 +76,12 @@ class BookListViewItem extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        '19.99 €',
+                        'Free',
                         style: Styles.textStyle20.copyWith(
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      const BookRating(),
+                      BookRating(rating: rating, ratingsCount: ratingsCount),
                     ],
                   ),
                 ],

@@ -30,6 +30,7 @@ class BookModel extends BookEntity {
           authorName: volumeInfo.authors!.first,
           price: 0.0,
           rating: volumeInfo.averageRating,
+          ratingsCount: volumeInfo.ratingsCount,
           bookId: id!,
         );
 
