@@ -6,17 +6,26 @@ import 'package:flutter/material.dart';
 part 'newest_books_state.dart';
 
 class NewestBooksCubit extends Cubit<NewestBooksState> {
-  NewestBooksCubit(this.fetchNewestBooksUseCase) : super(NewestBooksInitial());
+  NewestBooksCubit(this.newestBooksUseCase) : super(NewestBooksInitial());
 
-  final FetchNewestBooksUseCase fetchNewestBooksUseCase;
+  final FetchNewestBooksUseCase newestBooksUseCase;
 
-  Future<void> fetchNewestBooks() async {
-    emit(NewestBooksLoading());
+  Future<void> fetchNewestBooks({int pageNum = 0}) async {
+    if(pageNum==0){
+      emit(NewestBooksLoading());
+    } else{
+      emit(NewestBooksPaginationLoading());
+    }
 
-    var result = await fetchNewestBooksUseCase.call();
+
+    var result = await newestBooksUseCase.call(pageNum);
 
     result.fold((failure) {
-      emit(NewestBooksFailure(failure.message));
+      if(pageNum==0){
+        emit(NewestBooksFailure(failure.message));
+      }else{
+        emit(NewestBooksPaginationFailure(failure.message));
+      }
     }, (books) {
       emit(NewestBooksSuccess(books));
     });
