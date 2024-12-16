@@ -1,7 +1,9 @@
+import 'package:bookly_app/core/utils/app_router.dart';
 import 'package:bookly_app/features/home/domain/entities/book_entity.dart';
 import 'package:bookly_app/features/home/presentation/maneger/newest_books_cubit/newest_books_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 import 'book_list_view_item.dart';
 
@@ -57,13 +59,17 @@ class _NewestBooksListViewState extends State<NewestBooksListView> {
       itemBuilder: (context, index) {
         return Padding(
           padding: const EdgeInsets.symmetric(vertical: 10),
-          child: BookListViewItem(
-            image: widget.books[index].image ?? "",
-            author: widget.books[index].authorName ?? "",
-            title: widget.books[index].title,
-            rating: widget.books[index].rating ?? 0,
-            ratingsCount: widget.books[index].ratingsCount ?? 0,
-
+          child: GestureDetector(
+            onTap: (){
+              GoRouter.of(context).push(AppRouter.bookDetailsView,extra: widget.books[index]);
+            },
+            child: BookListViewItem(
+              image: widget.books[index].image ?? "",
+              author: widget.books[index].authorName ?? "",
+              title: widget.books[index].title,
+              rating: widget.books[index].rating ?? 0,
+              ratingsCount: widget.books[index].ratingsCount ?? 0,
+            ),
           ),
         );
       },
