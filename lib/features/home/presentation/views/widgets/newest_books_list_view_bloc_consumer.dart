@@ -1,7 +1,6 @@
 import 'package:bookly_app/core/utils/functions/build_error_snack_error.dart';
 import 'package:bookly_app/features/home/domain/entities/book_entity.dart';
 import 'package:bookly_app/features/home/presentation/maneger/newest_books_cubit/newest_books_cubit.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/featured_books_list_view_loading_indicator.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/newest_books_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
