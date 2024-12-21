@@ -34,7 +34,7 @@ class _FeaturedBooksListViewState extends State<FeaturedBooksListView> {
       if (!isLoading) {
         isLoading = true;
         await BlocProvider.of<FeaturedBooksCubit>(context)
-            .fetchFeaturedBooks(pageNumber: nextPage++);
+            .fetchFeaturedBooks(pageNumber: nextPage++).then((value) => null);
         isLoading = false;
       }
     }

@@ -6,6 +6,8 @@ abstract class HomeLocalDataSource {
   List<BookEntity> fetchFeaturedBooks({int pageNumber = 0});
 
   List<BookEntity> fetchNewestBooks({int pageNum = 0});
+
+  List<BookEntity> fetchSimilarBooks({String category = "all"});
 }
 
 class HomeLocalDataSourceImpl extends HomeLocalDataSource {
@@ -39,5 +41,13 @@ class HomeLocalDataSourceImpl extends HomeLocalDataSource {
     }
 
     return box.values.toList().sublist(startIndex, endIndex);
+  }
+
+  @override
+  List<BookEntity> fetchSimilarBooks({String category = "all"}) {
+
+    var box = Hive.box<BookEntity>(similarBox);
+
+    return box.values.where((element) => element.category==category).toList();
   }
 }

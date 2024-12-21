@@ -35,7 +35,7 @@ class _NewestBooksListViewState extends State<NewestBooksListView> {
       if (!isLoading) {
         isLoading = true;
         await BlocProvider.of<NewestBooksCubit>(context)
-            .fetchNewestBooks(pageNum: nextPage++);
+            .fetchNewestBooks(pageNum: nextPage++).then((value) => null);
         isLoading = false;
       }
     }
