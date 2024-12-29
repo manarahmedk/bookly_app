@@ -64,7 +64,7 @@ class BooklyApp extends StatelessWidget {
               FetchSimilarBooksUseCase(
                 getIt.get<HomeRepoImpl>(),
               ),
-            )..fetchSimilarBooks(category: "artificial intelligence").then((value) => null);
+            )..fetchSimilarBooks(category: "artificial intelligence");
           },
         ),
       ],

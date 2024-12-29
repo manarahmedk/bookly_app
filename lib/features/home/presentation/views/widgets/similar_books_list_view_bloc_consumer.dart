@@ -1,4 +1,3 @@
-import 'package:bookly_app/core/utils/functions/build_error_snack_error.dart';
 import 'package:bookly_app/features/home/domain/entities/book_entity.dart';
 import 'package:bookly_app/features/home/presentation/maneger/similar_books_cubit/similar_books_cubit.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/similar_books_list_view.dart';
@@ -28,10 +27,6 @@ class _NewestBooksListViewBlocConsumerState
         if (state is SimilarBooksSuccess) {
           books.addAll(state.books);
         }
-        if (state is SimilarBooksFailure) {
-          ScaffoldMessenger.of(context)
-              .showSnackBar(buildErrorSnackBar(state.errorMessage));
-        }
       },
       builder: (context, state) {
         if (state is SimilarBooksSuccess) {
@@ -40,7 +35,7 @@ class _NewestBooksListViewBlocConsumerState
             book: widget.book,
           );
         } else if (state is SimilarBooksFailure) {
-          return Text(state.errorMessage);
+          return const Center(child: Text(""));
         } else {
           return const Center(
             child: CircularProgressIndicator(),
