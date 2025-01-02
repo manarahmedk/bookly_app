@@ -1,5 +1,5 @@
 import 'package:bookly_app/features/home/domain/entities/book_entity.dart';
-import 'package:bookly_app/features/home/presentation/maneger/similar_books_cubit/similar_books_cubit.dart';
+import 'package:bookly_app/features/home/presentation/manager/similar_books_cubit/similar_books_cubit.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/similar_books_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -35,7 +35,7 @@ class _NewestBooksListViewBlocConsumerState
             book: widget.book,
           );
         } else if (state is SimilarBooksFailure) {
-          return const Center(child: Text(""));
+          return const Center(child: Text("No books found"));
         } else {
           return const Center(
             child: CircularProgressIndicator(),

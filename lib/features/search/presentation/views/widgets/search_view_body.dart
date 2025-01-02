@@ -1,5 +1,5 @@
 import 'package:bookly_app/core/utils/api_service.dart';
-import 'package:bookly_app/core/utils/functions/setup_sevice_locator.dart';
+import 'package:bookly_app/core/utils/functions/setup_service_locator.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:bookly_app/features/search/data/repos/search_repo_impl.dart';
 import 'package:bookly_app/features/search/presentation/manager/search_books_cubit/search_books_cubit.dart';
